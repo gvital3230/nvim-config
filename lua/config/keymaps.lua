@@ -65,3 +65,10 @@ vim.keymap.del("n", "<leader><tab>d")
 vim.keymap.del("n", "<leader><tab>[")
 
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Explorer" })
+
+vim.keymap.set(
+  "n",
+  "<leader>fo",
+  "<cmd>lua require('telescope.builtin').find_files({no_ignore=true})<CR>",
+  { desc = "Find files with ignored" }
+)
