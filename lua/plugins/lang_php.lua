@@ -7,6 +7,31 @@ return {
       end
     end,
   },
+  -- Ensure PHP tools are installed
+  {
+    "williamboman/mason.nvim",
+    opts = function(_, opts)
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, { "phpcbf", "phpcs", "php-debug-adapter" })
+    end,
+  },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        ["php"] = { "intelephense", "phpcbf" },
+      },
+      formatters = {
+        phpcbf = {
+          -- A function that calculates the directory to run the command in
+          cwd = require("conform.util").root_file({ "phpcs.xml" }),
+          -- When cwd is not found, don't run the formatter (default false)
+          require_cwd = true,
+        },
+      },
+    },
+  },
   {
     "mfussenegger/nvim-lint",
     opts = {
@@ -14,14 +39,6 @@ return {
         php = { "phpcs" },
       },
     },
-  },
-  -- Ensure PHP tools are installed
-  {
-    "williamboman/mason.nvim",
-    opts = function(_, opts)
-      opts.ensure_installed = opts.ensure_installed or {}
-      vim.list_extend(opts.ensure_installed, { "php-debug-adapter" })
-    end,
   },
   {
     "mfussenegger/nvim-dap",
