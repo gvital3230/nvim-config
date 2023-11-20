@@ -82,15 +82,6 @@ return {
     },
   },
 
--- lvim.lsp.buffer_mappings.normal_mode["<leader>dc"] = { continue, "Start/Continue debug" }
--- lvim.keys.normal_mode["<F8>"] = ":lua require'dap'.toggle_breakpoint()<CR>"
--- lvim.keys.normal_mode["<F9>"] = ":lua require'dap'.continue()<CR>"
--- lvim.keys.normal_mode["<F10>"] = ":lua require'dap'.step_over()<CR>"
--- lvim.keys.normal_mode["<F11>"] = ":lua require'dap'.step_into()<CR>"
--- -- in kitty.teminfo 	F23 corresponds to Shift-F11 (kf23=\E[23;2~,)
--- lvim.keys.normal_mode["<F23>"] = ":lua require'dap'.step_out()<CR>"
--- lvim.keys.normal_mode["<F12>"] = ":lua require'dap.ui.widgets'.hover()<CR>"
---
   -- stylua: ignore
   keys = {
     { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
@@ -98,6 +89,7 @@ return {
     { "<F9>", function() require("dap").continue() end, desc = "Continue" },
     { "<F10>", function() require("dap").step_over() end, desc = "Step Over" },
     { "<F11>", function() require("dap").step_into() end, desc = "Step Into" },
+    -- -- in kitty.teminfo 	F23 corresponds to Shift-F11 (kf23=\E[23;2~,)
     { "<F23>", function() require("dap").step_out() end, desc = "Step Out" },
     { "<F12>", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
     { "<leader>da", function() require("dap").continue({ before = get_args }) end, desc = "Run with Args" },
