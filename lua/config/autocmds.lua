@@ -8,3 +8,10 @@ vim.api.nvim_create_autocmd("BufEnter", {
     vim.o.filetype = "groovy"
   end,
 })
+
+vim.api.nvim_create_autocmd("Filetype", {
+  pattern = { "git" },
+  callback = function()
+    vim.o.foldmethod = "syntax"
+  end,
+})
