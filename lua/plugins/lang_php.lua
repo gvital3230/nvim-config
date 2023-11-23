@@ -8,6 +8,13 @@ return {
     end,
   },
   -- Ensure PHP tools are installed
+  -- NOTE: This is a workaround - to let the plugin see global composer packages
+  --
+  -- ``` bash
+  -- /Users/vital/.local/share/nvim/mason/bin/phpcbf --config-set installed_paths "/Users/vital/.composer/vendor/phpcsstandards/phpcsextra,/Users/vital/.composer/vendor/phpcsstandards/phpcsutils,/Users/vital/.composer/vendor/wp-coding-standards/wpcs"
+  -- /Users/vital/.local/share/nvim/mason/bin/phpcs --config-set installed_paths "/Users/vital/.composer/vendor/phpcsstandards/phpcsextra,/Users/vital/.composer/vendor/phpcsstandards/phpcsutils,/Users/vital/.composer/vendor/wp-coding-standards/wpcs"
+  -- ```
+  --
   {
     "williamboman/mason.nvim",
     opts = function(_, opts)
