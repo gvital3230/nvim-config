@@ -1,4 +1,18 @@
-# 💤 LazyVim
+- Make a backup of your current Neovim files:
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+  ```sh
+  mv ~/.config/nvim ~/.config/nvim.bak
+  mv ~/.local/share/nvim ~/.local/share/nvim.bak
+  ```
+
+- Clone configuration:
+
+  ```sh
+  git clone https://github.com/gvital3230/nvim-config ~/.config/nvim
+  ```
+
+- Start Neovim!
+
+  ```sh
+  nvim
+  ```
