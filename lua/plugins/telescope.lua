@@ -28,6 +28,7 @@ return {
       defaults = {
         mappings = {
           i = {
+            ["<C-d>"] = require("telescope.actions").delete_buffer,
             ["<C-n>"] = require("telescope.actions").move_selection_next,
             ["<C-p>"] = require("telescope.actions").move_selection_previous,
             ["<C-c>"] = require("telescope.actions").close,
@@ -40,6 +41,7 @@ return {
             ["<CR>"] = require("telescope.actions").select_default,
           },
           n = {
+            ["<C-d>"] = require("telescope.actions").delete_buffer,
             ["<C-n>"] = require("telescope.actions").move_selection_next,
             ["<C-p>"] = require("telescope.actions").move_selection_previous,
             ["<C-q>"] = function(...)
