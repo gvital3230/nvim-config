@@ -27,7 +27,7 @@ return {
     optional = true,
     opts = {
       formatters_by_ft = {
-        ["php"] = { "intelephense", "phpcbf" },
+        php = { "phpcbf" },
       },
       formatters = {
         phpcbf = {
@@ -37,6 +37,9 @@ return {
           require_cwd = true,
         },
       },
+      log_level = vim.log.levels.ERROR,
+      lsp_fallback = "always",
+      timeout_ms = 10000,
     },
   },
   {
