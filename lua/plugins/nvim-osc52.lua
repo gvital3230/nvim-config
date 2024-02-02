@@ -6,12 +6,12 @@ local function paste()
   return { vim.fn.split(vim.fn.getreg(""), "\n"), vim.fn.getregtype("") }
 end
 
-vim.g.clipboard = {
-  name = "osc52",
-  copy = { ["+"] = copy, ["*"] = copy },
-  paste = { ["+"] = paste, ["*"] = paste },
-}
-
+-- vim.g.clipboard = {
+--   name = "osc52",
+--   copy = { ["+"] = copy, ["*"] = copy },
+--   paste = { ["+"] = paste, ["*"] = paste },
+-- }
+--
 return {
   "ojroques/nvim-osc52",
 }
