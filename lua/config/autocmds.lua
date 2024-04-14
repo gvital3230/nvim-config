@@ -9,6 +9,13 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = { ".env" },
+  callback = function()
+    vim.diagnostic.disable(0)
+  end,
+})
+
 vim.api.nvim_create_autocmd("Filetype", {
   pattern = { "git" },
   callback = function()
