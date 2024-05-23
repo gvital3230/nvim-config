@@ -45,7 +45,7 @@ vim.keymap.set(
   { desc = "redraw / clear hlsearch / diff update" }
 )
 
--- unset defalut windows mappings
+-- unset default windows mappings
 vim.keymap.del("n", "<leader>ww")
 vim.keymap.del("n", "<leader>wd")
 vim.keymap.del("n", "<leader>w-")
@@ -69,11 +69,3 @@ vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Explorer" 
 -- Launch DAP serve for lua
 -- @TODO make it more generic
 vim.keymap.set("n", "<F5>", "<cmd>lua require'osv'.launch({port = 8086})<CR>", { desc = "Launch lua DAP server" })
-
-vim.keymap.set(
-  "n",
-  "<leader>fo",
-  "<cmd>lua require('telescope.builtin').find_files({no_ignore=true})<CR>",
-  { desc = "Find files with ignored" }
-)
-vim.keymap.set("n", "<leader>st", "<cmd>Telescope live_grep_args<CR>", { desc = "Text" })

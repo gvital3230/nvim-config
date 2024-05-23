@@ -21,6 +21,14 @@ return {
       -- },
     },
   },
+  keys = {
+    { "<leader>sg", "<cmd>Telescope live_grep_args<CR>", desc = "Text" },
+    {
+      "<leader>fo",
+      "<cmd>lua require('telescope.builtin').find_files({no_ignore=true})<CR>",
+      desc = "Find files with ignored",
+    },
+  },
   config = function()
     local telescope = require("telescope")
 
@@ -58,7 +66,9 @@ return {
           mappings = { -- extend mappings
             i = {
               -- ["<C-k>"] = require("telescope-live-grep-args.actions").quote_prompt(),
-              ["<C-i>"] = require("telescope-live-grep-args.actions").quote_prompt({ postfix = " --iglob " }),
+              ["<C-i>"] = require("telescope-live-grep-args.actions").quote_prompt({
+                postfix = " --iglob ",
+              }),
             },
           },
           -- ... also accepts theme settings, for example:
