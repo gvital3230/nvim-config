@@ -65,7 +65,9 @@ return {
           -- define mappings, e.g.
           mappings = { -- extend mappings
             i = {
-              -- ["<C-k>"] = require("telescope-live-grep-args.actions").quote_prompt(),
+              ["<C-o>"] = require("telescope-live-grep-args.actions").quote_prompt({
+                postfix = " --no-ignore ",
+              }),
               ["<C-i>"] = require("telescope-live-grep-args.actions").quote_prompt({
                 postfix = " --iglob ",
               }),
