@@ -141,7 +141,7 @@ local config = {
     dotfiles = false,
     git_clean = false,
     no_buffer = false,
-    custom = { "node_modules", "\\.cache" },
+    custom = { "\\.cache" },
     exclude = {},
   },
   filesystem_watchers = {
