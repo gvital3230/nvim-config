@@ -46,12 +46,12 @@ vim.keymap.set(
 )
 
 -- unset default windows mappings
-vim.keymap.del("n", "<leader>ww")
-vim.keymap.del("n", "<leader>wd")
-vim.keymap.del("n", "<leader>w-")
-vim.keymap.del("n", "<leader>w|")
-vim.keymap.del("n", "<leader>-")
-vim.keymap.del("n", "<leader>|")
+-- vim.keymap.del("n", "<leader>ww")
+-- vim.keymap.del("n", "<leader>wd")
+-- vim.keymap.del("n", "<leader>w-")
+-- vim.keymap.del("n", "<leader>w|")
+-- vim.keymap.del("n", "<leader>-")
+-- vim.keymap.del("n", "<leader>|")
 
 -- quick save
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr><esc>", { desc = "Prev buffer" })
