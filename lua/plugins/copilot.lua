@@ -5,6 +5,7 @@ return {
     panel = { enabled = false },
     filetypes = {
       markdown = true,
+      proto = false,
       help = true,
     },
   },
