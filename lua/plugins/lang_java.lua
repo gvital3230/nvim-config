@@ -7,7 +7,13 @@ return {
       opts = {
         servers = {
           jdtls = {
-            -- your jdtls configuration goes here
+            -- cmd = {
+            --   "jdtls",
+            --   "--jvm-arg=" .. string.format(
+            --     "-javaagent:%s",
+            --     vim.fn.expand("/Users/vital/.local/share/nvim/mason/share/lombok-nightly/lombok.jar")
+            --   ),
+            -- },
           },
         },
         setup = {
