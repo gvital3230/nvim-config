@@ -4,4 +4,4 @@
 
 local opt = vim.opt
 
-opt.relativenumber = false -- Relative line numbers
+opt.relativenumber = true -- Relative line numbers
