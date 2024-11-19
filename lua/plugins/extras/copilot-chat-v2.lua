@@ -53,7 +53,7 @@ return {
       error_header = "## Error ",
       prompts = prompts,
       auto_follow_cursor = false, -- Don't follow the cursor after getting response
-      show_help = false, -- Show help in virtual text, set to true if that's 1st time using Copilot Chat
+      show_help = true, -- Show help in virtual text, set to true if that's 1st time using Copilot Chat
       mappings = {
         -- Use tab for completion
         complete = {
@@ -149,7 +149,6 @@ return {
 
       -- Custom buffer for CopilotChat
       vim.api.nvim_create_autocmd("BufEnter", {
-        pattern = "copilot-*",
         callback = function()
           vim.opt_local.relativenumber = true
           vim.opt_local.number = true
@@ -160,6 +159,7 @@ return {
             vim.bo.filetype = "markdown"
           end
         end,
+        pattern = "copilot-*",
       })
     end,
     event = "VeryLazy",
@@ -182,15 +182,15 @@ return {
         end,
         desc = "CopilotChat - Prompt actions",
       },
+      { "<leader>at", "<cmd>CopilotChatTests<cr>", desc = "CopilotChat - Generate tests" },
+      -- Code related commands
+      { "<leader>ae", "<cmd>CopilotChatExplain<cr>", desc = "CopilotChat - Explain code" },
       {
         "<leader>ap",
         ":lua require('CopilotChat.integrations.telescope').pick(require('CopilotChat.actions').prompt_actions({selection = require('CopilotChat.select').visual}))<CR>",
         mode = "x",
         desc = "CopilotChat - Prompt actions",
       },
-      -- Code related commands
-      { "<leader>ae", "<cmd>CopilotChatExplain<cr>", desc = "CopilotChat - Explain code" },
-      { "<leader>at", "<cmd>CopilotChatTests<cr>", desc = "CopilotChat - Generate tests" },
       { "<leader>ar", "<cmd>CopilotChatReview<cr>", desc = "CopilotChat - Review code" },
       { "<leader>aR", "<cmd>CopilotChatRefactor<cr>", desc = "CopilotChat - Refactor code" },
       { "<leader>an", "<cmd>CopilotChatBetterNamings<cr>", desc = "CopilotChat - Better Naming" },
