@@ -53,21 +53,20 @@ return {
   -- Add status line icon for copilot
   {
     "nvim-lualine/lualine.nvim",
+    optional = true,
+    event = "VeryLazy",
     opts = function(_, opts)
-      local Util = require("lazyvim.util")
-      table.insert(opts.sections.lualine_x, 2, {
-        function()
-          local icon = require("lazyvim.config").icons.kinds.Copilot
-          return icon
-        end,
-        cond = function()
-          local ok, clients = pcall(vim.lsp.get_active_clients, { name = "copilot", bufnr = 0 })
-          return ok and #clients > 0
-        end,
-        color = function()
-          return Util.ui.fg("Special")
-        end,
-      })
+      table.insert(
+        opts.sections.lualine_x,
+        2,
+        LazyVim.lualine.status(LazyVim.config.icons.kinds.Copilot, function()
+          local clients = package.loaded["copilot"] and LazyVim.lsp.get_clients({ name = "copilot", bufnr = 0 }) or {}
+          if #clients > 0 then
+            local status = require("copilot.api").status.data.status
+            return (status == "InProgress" and "pending") or (status == "Warning" and "error") or "ok"
+          end
+        end)
+      )
     end,
   },
 }
