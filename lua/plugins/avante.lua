@@ -4,7 +4,7 @@ return {
   lazy = false,
   version = false, -- set this if you want to always pull the latest change
   opts = {
-    debug = true,
+    -- debug = true,
     provider = "copilot",
     auto_suggestions_provider = "copilot",
     -- add any opts here
