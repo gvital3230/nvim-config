@@ -5,3 +5,5 @@
 local opt = vim.opt
 
 opt.relativenumber = true -- Relative line numbers
+
+vim.g.ai_cmp = false -- Disable copilot.lua cmp suggestion
