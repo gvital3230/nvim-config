@@ -56,14 +56,14 @@ vim.keymap.set(
 -- quick save
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr><esc>", { desc = "Prev buffer" })
 
--- unset default tabs mappings
-vim.keymap.del("n", "<leader><tab>l")
-vim.keymap.del("n", "<leader><tab>f")
-vim.keymap.del("n", "<leader><tab><tab>")
-vim.keymap.del("n", "<leader><tab>]")
-vim.keymap.del("n", "<leader><tab>d")
-vim.keymap.del("n", "<leader><tab>[")
-
+-- -- unset default tabs mappings
+-- vim.keymap.del("n", "<leader><tab>l")
+-- vim.keymap.del("n", "<leader><tab>f")
+-- vim.keymap.del("n", "<leader><tab><tab>")
+-- vim.keymap.del("n", "<leader><tab>]")
+-- vim.keymap.del("n", "<leader><tab>d")
+-- vim.keymap.del("n", "<leader><tab>[")
+--
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Explorer" })
 
 -- Launch DAP serve for lua
