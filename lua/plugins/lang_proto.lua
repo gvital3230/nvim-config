@@ -8,4 +8,19 @@ return {
       },
     },
   },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        -- Ensure mason installs the server
+        pbls = {
+          capabilities = {
+            -- it complains about this
+            -- https://github.com/LazyVim/LazyVim/issues/3028
+            offsetEncoding = { "utf-16" },
+          },
+        },
+      },
+    },
+  },
 }
