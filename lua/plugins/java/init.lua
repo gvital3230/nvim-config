@@ -14,4 +14,20 @@ return {
       },
     },
   },
+  {
+    "mfussenegger/nvim-jdtls",
+    opts = {
+      -- Just override the Java executable path
+      cmd = {
+        vim.fn.expand("~/.local/share/nvim/mason/bin/jdtls"),
+        "--java-executable",
+        vim.fn.expand("~/.sdkman/candidates/java/21.0.8-amzn/bin/java"),
+      },
+      -- settings = {
+      --   java = {
+      --     home = "~/.sdkman/candidates/java/21.0.8-amzn/bin/java",
+      --   },
+      -- },
+    },
+  },
 }
