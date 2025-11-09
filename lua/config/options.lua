@@ -12,3 +12,5 @@ vim.g.root_spec = { "cwd" }
 
 -- https://github.com/LazyVim/LazyVim/discussions/5207#discussioncomment-12312625
 vim.g.ai_cmp = false
+
+vim.g.lazyvim_picker = "snacks"
